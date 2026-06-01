@@ -1,0 +1,382 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Georgia, serif;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  background: #efe6d6;
+  color: #3b2a1f;
+}
+
+.dark {
+  background: #1d1715;
+  color: #f0dfc5;
+}
+
+.sidebar {
+  width: 250px;
+  padding: 25px;
+  background: #7f9f73;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.dark .sidebar {
+  background: rgba(0, 0, 0, 0.55); 
+}
+
+.sidebar h1 {
+  color: #5c1f2e;
+  margin-bottom: 25px;
+}
+
+.dark .sidebar h1 {
+  color: #d6a0aa;
+}
+
+button,
+input,
+select {
+  border: none;
+  border-radius: 14px;
+  padding: 12px 15px;
+  font-size: 15px;
+}
+
+button {
+  cursor: pointer;
+  background: #8b2f45;
+  color: white;
+  transition: 0.2s;
+}
+
+button:hover {
+  transform: scale(1.03);
+  background: #6d2436;
+}
+
+.sidebar button {
+  background: #f4ead7;
+  color: #4a2d24;
+}
+
+.dark .sidebar button {
+  background: #5a3b34;
+  color: #f6e4c8;
+}
+
+.themeBtn {
+  margin-top: auto;
+}
+
+.content {
+  flex: 1;
+  padding: 35px;
+}
+
+h2 {
+  font-size: 34px;
+  margin-top: 0;
+}
+
+.filters {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.emptyBox,
+.profileCard,
+.chatWindow,
+.chatList {
+  background: rgba(255, 255, 255, 0.45);
+  border-radius: 25px;
+  padding: 25px;
+  box-shadow: 0 10px 25px rgba(60, 35, 20, 0.12);
+}
+
+.dark .emptyBox,
+.dark .profileCard,
+.dark .chatWindow,
+.dark .chatList {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.chatLayout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 20px;
+  height: 70vh;
+}
+
+.chatItem {
+  padding: 15px;
+  border-radius: 15px;
+  background: #d9c5a5;
+  margin-bottom: 12px;
+}
+
+.dark .chatItem {
+  background: #4c332d;
+}
+
+.active {
+  border: 2px solid #8b2f45;
+}
+
+.emptySmall {
+  opacity: 0.7;
+  font-size: 14px;
+}
+
+.chatWindow {
+  display: flex;
+  flex-direction: column;
+}
+
+.messages {
+  flex: 1;
+  padding: 15px 0;
+}
+
+.systemMsg {
+  background: #c8d8b8;
+  padding: 12px;
+  border-radius: 14px;
+  display: inline-block;
+}
+
+.dark .systemMsg {
+  background: #5b3a45;
+}
+
+.messageInput {
+  display: flex;
+  gap: 10px;
+}
+
+.messageInput input {
+  flex: 1;
+}
+
+.plusBtn {
+  position: fixed;
+  right: 35px;
+  bottom: 35px;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  font-size: 35px;
+}
+
+.modalBg {
+  position: fixed;
+  inset: 0;
+  background:#3a2a25;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  width: 420px;
+  background: #efe6d6;
+  color: #3b2a1f;
+  border-radius: 25px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.dark .modal {
+  background: #2b201d;
+  color: #f0dfc5;
+}
+
+.modalBtns {
+  display: flex;
+  gap: 12px;
+}
+
+.logoutBtn {
+  margin-top: 25px;
+  background: #5c1f2e;
+}
+
+.profileTabs {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 25px;
+  margin-top: 25px;
+}
+
+.authCard {
+  max-width: 500px;
+  background: rgba(255, 255, 255, 0.45);
+  padding: 25px;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  box-shadow: 0 10px 25px rgba(60, 35, 20, 0.12);
+}
+
+.dark .authCard {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.avatarBox {
+  padding: 18px;
+  border-radius: 18px;
+  background: #c8d8b8;
+  font-size: 20px;
+  text-align: center;
+}
+
+.dark .avatarBox {
+  background: #5b3a45;
+}
+.authPage {
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 40px;
+}
+
+.authCard {
+  width: 100%;
+  max-width: 520px;
+  background: rgba(255, 255, 255, 0.48);
+  padding: 32px;
+  border-radius: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 14px 35px rgba(60, 35, 20, 0.16);
+  border: 1px solid rgba(92, 31, 46, 0.12);
+}
+
+.dark .authCard {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(240, 223, 197, 0.12);
+}
+
+.authCard h2 {
+  margin: 0 0 10px;
+  font-size: 34px;
+  color: #5c1f2e;
+}
+
+.dark .authCard h2 {
+  color: #d6a0aa;
+}
+
+.authCard input,
+.authCard select {
+  width: 100%;
+  background: #f8f0e2;
+  color: #3b2a1f;
+  border: 1px solid rgba(92, 31, 46, 0.16);
+  outline: none;
+  border-radius: 16px;
+  padding: 14px 16px;
+  font-size: 15px;
+}
+
+.dark .authCard input,
+.dark .authCard select {
+  background: #3a2a25;
+  color: #f0dfc5;
+  border: 1px solid rgba(240, 223, 197, 0.18);
+}
+
+.authCard input:focus,
+.authCard select:focus {
+  border-color: #8b2f45;
+  box-shadow: 0 0 0 3px rgba(139, 47, 69, 0.15);
+}
+
+.authCard button {
+  margin-top: 8px;
+  padding: 14px;
+  border-radius: 18px;
+  background: #8b2f45;
+  color: white;
+  font-weight: 600;
+}
+
+.authCard button:hover {
+  background: #6d2436;
+}
+
+.avatarBox {
+  padding: 18px;
+  border-radius: 20px;
+  background: #c8d8b8;
+  color: #3b2a1f;
+  font-size: 20px;
+  text-align: center;
+  border: 1px solid rgba(127, 159, 115, 0.35);
+}
+
+.dark .avatarBox {
+  background: #5b3a45;
+  color: #f0dfc5;
+}
+
+.authText {
+  text-align: center;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.authLink {
+  color: #8b2f45;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.dark .authLink {
+  color: #d6a0aa;
+}
+
+@media (max-width: 650px) {
+  .authPage {
+    padding-top: 20px;
+  }
+
+  .authCard {
+    padding: 22px;
+    border-radius: 22px;
+  }
+}
+@media (max-width: 850px) {
+  .app {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .filters,
+  .chatLayout {
+    grid-template-columns: 1fr;
+  }
+
+  .chatLayout {
+    height: auto;
+  }
+}
